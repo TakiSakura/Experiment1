@@ -18,30 +18,38 @@
 * 步骤四：在理解上述程序的情况下，尝试从头分析并复写该程序。
  
 ### 1). 源文件一：
+```
 package banking;
+
 public class Account {
- private double   balance;
- public Account(String bal) {
-   balance = bal;
- }
- public double getBalance() {
-   return balance;
- }
- public boolean deposit(double amount) {
-   balance = balance + amount;
-   return true;
- }
- public boolean withdraw(double amount) {
-   boolean result = true;
-   if ( balance < amount ) {
-     result = false;
-   } else {
-     balance = balance - amount;
-   }
-   return result;
- }
+    private double balance;
+
+    public Account(double bal) {
+        balance = Double.parseDouble(String.valueOf(bal));
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public boolean deposit(double amount) {
+        balance = balance + amount;
+        return true;
+    }
+
+    public boolean withdraw(double amount) {
+        boolean result = true;
+        if (balance < amount) {
+            result = false;
+        } else {
+            balance = balance - amount;
+        }
+        return result;
+    }
 }
+```
 ### 2). 源文件二：
+```
 package banking;
 public class Customer {
  private Account  account;
@@ -65,8 +73,9 @@ age = cAge;
    account = acct;
  }  
 } 
- 
+``` 
 ### 3). 源文件三：
+```
 package banking;
 import banking.*;
 public class TestBanking {
@@ -90,4 +99,13 @@ public class TestBanking {
 ​       + "] has a balance of " + account.getBalance());
  }
 }
+```
 #### 将上述文件编译后，尝试运行。
+## 实验方法
+在3个源代码的基础上,创建banking包,分别创建3个类customer,account,TestBanking.在源代码中发现已经创建了构造方法,只用在customer类里创建age属性,并在testbanking的输出里,用getage将age进行输出.
+## 实验结果
+---
+* 在banking包下创建customer类,在类中创建账户名字和年龄的属性,之后用构造方法重构,在Customer方法中写入3个参数分别为String f, String l, int cAge.在下面在分别创建账户名字和年龄的普通方法,用于在Testbanking输出.
+* 再创建Account类,创建balance bal的属性,创建获得余额,存款和提款3种方法.存款方法返回值为余额与存款额相加;取款为余额与提款额相减,若余额小于提款额,则不能进行,输出false.
+* 最后创建TestBanking类,实例化一个账户,余额为500,然后进行提款、存款、提款、提款操作,最后输出账户人的姓名年龄和余额.
+!
