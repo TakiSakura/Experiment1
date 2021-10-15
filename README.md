@@ -77,7 +77,7 @@ age = cAge;
 ### 3). 源文件三：
 ```
 package banking;
-import banking.*;
+import banking;
 public class TestBanking {
  public static void main(String[] args) {
    Customer customer;
@@ -95,8 +95,7 @@ public class TestBanking {
    System.out.println("Withdraw 400.00: " + account.withdraw(400.00));
    // Print out the final account balance
    System.out.println("Customer [" + customer.getLastName()
-​       + ", " + customer.getFirstName()
-​       + "] has a balance of " + account.getBalance());
+​       + ", " + customer.getFirstName()+ "] has a balance of " + account.getBalance());
  }
 }
 ```
@@ -108,4 +107,6 @@ public class TestBanking {
 * 在banking包下创建customer类,在类中创建账户名字和年龄的属性,之后用构造方法重构,在Customer方法中写入3个参数分别为String f, String l, int cAge.在下面在分别创建账户名字和年龄的普通方法,用于在Testbanking输出.
 * 再创建Account类,创建balance bal的属性,创建获得余额,存款和提款3种方法.存款方法返回值为余额与存款额相加;取款为余额与提款额相减,若余额小于提款额,则不能进行,输出false.
 * 最后创建TestBanking类,实例化一个账户,余额为500,然后进行提款、存款、提款、提款操作,最后输出账户人的姓名年龄和余额.
-!
+## 实验感想
+---
+在看到源代码后,对源代码进行整理,学会了package的用法.并加深了对构造方法的理解,知道了构造方法在程序中起到的初始化的作用
