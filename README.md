@@ -111,7 +111,12 @@ public class TestBanking {
 #### 将上述文件编译后，尝试运行。
 ## 实验方法
 在3个源代码的基础上,创建banking包,分别创建3个类customer,account,TestBanking.在源代码中发现已经创建了构造方法,只用在customer类里创建age属性,并在testbanking的输出里,用getage将age进行输出.
+## 修改后代码
+![Image text](https://github.com/TakiSakura/Experiment1/blob/4a14bf1c8d801a5451cd62e80450514b347eb126/9fe0ea92b02c696ca1063ef485ba6f7.png)
+![Image text](https://github.com/TakiSakura/Experiment1/blob/4a14bf1c8d801a5451cd62e80450514b347eb126/dd3982db3d9ea198867ffd120b431c8.png)
+![Image text](https://github.com/TakiSakura/Experiment1/blob/4a14bf1c8d801a5451cd62e80450514b347eb126/e55821aa6e819955ce292c2448148e6.png)
 ## 实验结果
+![Image text](https://github.com/TakiSakura/Experiment1/blob/4a14bf1c8d801a5451cd62e80450514b347eb126/ff4656c897d8230bb724de1ae00ae96.png)
 ---
 * 在banking包下创建customer类,在类中创建账户名字和年龄的属性,之后用构造方法重构,在Customer方法中写入3个参数分别为String f, String l, int cAge.在下面在分别创建账户名字和年龄的普通方法,用于在Testbanking输出.
 * 再创建Account类,创建balance bal的属性,创建获得余额,存款和提款3种方法.存款方法返回值为余额与存款额相加;取款为余额与提款额相减,若余额小于提款额,则不能进行,输出false.
