@@ -78,22 +78,31 @@ age = cAge;
 ```
 package banking;
 import banking;
+
 public class TestBanking {
  public static void main(String[] args) {
    Customer customer;
    Account  account;
+
    // Create an account that can has a 500.00 balance.
+
    System.out.println("Creating the customer Jane Smith.");
    customer = new Customer("Jane", "Smith");
+
    System.out.println("Creating her account with a 500.00 balance.");
    customer.setAccount(new Account(500.00));
+
    account = customer.getAccount();
+
    // Perform some account transactions
+
    System.out.println("Withdraw 150.00: " + account.withdraw(150.00));
    System.out.println("Deposit 22.50: " + account.deposit(22.50));
    System.out.println("Withdraw 47.62: " + account.withdraw(47.62));
    System.out.println("Withdraw 400.00: " + account.withdraw(400.00));
+
    // Print out the final account balance
+
    System.out.println("Customer [" + customer.getLastName()
 ​       + ", " + customer.getFirstName()+ "] has a balance of " + account.getBalance());
  }
@@ -113,5 +122,5 @@ public class TestBanking {
 并在过程中加深了对构造方法的理解,知道了构造方法在程序中起到的初始化的作用.
 三个源代码我发现了其中有一定的关联性。他们虽然不在一个程序中，
 但在同一个package中。在customer和account类中定义的属性和方法，
-在最后的teskbanking中可以进行调用其中的属性，并用创造的构造方法进行实例化.
+在最后的testbanking中可以进行调用其中的属性，并用创造的构造方法进行实例化.
 
