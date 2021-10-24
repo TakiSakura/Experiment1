@@ -16,105 +16,11 @@
 * 步骤二：在开发环境中组织代码并运行。
 * 步骤三：请在Customer类新添加一个属性，描述其年龄，并补充操作年龄的方法。在测试类中调用这些方法。
 * 步骤四：在理解上述程序的情况下，尝试从头分析并复写该程序。
- 
-### 1). 源文件一：
-```
-package banking;
 
-public class Account {
-    private double balance;
-
-    public Account(double bal) {
-        balance = Double.parseDouble(String.valueOf(bal));
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public boolean deposit(double amount) {
-        balance = balance + amount;
-        return true;
-    }
-
-    public boolean withdraw(double amount) {
-        boolean result = true;
-        if (balance < amount) {
-            result = false;
-        } else {
-            balance = balance - amount;
-        }
-        return result;
-    }
-}
-```
-### 2). 源文件二：
-```
-package banking;
-public class Customer {
- private Account  account;
- private String   firstName;
- private String   lastName;
- public Customer(String f, String l, int cAge) {
-   firstName = f;
-lastName = l;
-age = cAge;
- }
- public String getFirstName() {
-   return firstName;
- }
- public String getLastName() {
-   return lastName;
- }
- public Account getAccount() {
-   return account;
- }
- public void setAccount(Account acct) {
-   account = acct;
- }  
-} 
-``` 
-### 3). 源文件三：
-```
-package banking;
-import banking;
-
-public class TestBanking {
- public static void main(String[] args) {
-   Customer customer;
-   Account  account;
-
-   // Create an account that can has a 500.00 balance.
-
-   System.out.println("Creating the customer Jane Smith.");
-   customer = new Customer("Jane", "Smith");
-
-   System.out.println("Creating her account with a 500.00 balance.");
-   customer.setAccount(new Account(500.00));
-
-   account = customer.getAccount();
-
-   // Perform some account transactions
-
-   System.out.println("Withdraw 150.00: " + account.withdraw(150.00));
-   System.out.println("Deposit 22.50: " + account.deposit(22.50));
-   System.out.println("Withdraw 47.62: " + account.withdraw(47.62));
-   System.out.println("Withdraw 400.00: " + account.withdraw(400.00));
-
-   // Print out the final account balance
-
-   System.out.println("Customer [" + customer.getLastName()
-​       + ", " + customer.getFirstName()+ "] has a balance of " + account.getBalance());
- }
-}
-```
 #### 将上述文件编译后，尝试运行。
 ## 实验方法
 在3个源代码的基础上,创建banking包,分别创建3个类customer,account,TestBanking.在源代码中发现已经创建了构造方法,只用在customer类里创建age属性,并在testbanking的输出里,用getage将age进行输出.
-## 修改后代码
-![Image text](https://github.com/TakiSakura/Experiment1/blob/4a14bf1c8d801a5451cd62e80450514b347eb126/9fe0ea92b02c696ca1063ef485ba6f7.png)
-![Image text](https://github.com/TakiSakura/Experiment1/blob/4a14bf1c8d801a5451cd62e80450514b347eb126/dd3982db3d9ea198867ffd120b431c8.png)
-![Image text](https://github.com/TakiSakura/Experiment1/blob/4a14bf1c8d801a5451cd62e80450514b347eb126/e55821aa6e819955ce292c2448148e6.png)
+
 ## 实验结果
 ![Image text](https://github.com/TakiSakura/Experiment1/blob/4a14bf1c8d801a5451cd62e80450514b347eb126/ff4656c897d8230bb724de1ae00ae96.png)
 ---
